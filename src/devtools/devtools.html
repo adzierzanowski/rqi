@@ -8,58 +8,92 @@
       RQI
       <button id="capture-toggle">Capture</button>
       <button id="clear-request-list">Clear</button>
+      <div>&diam; View:</div>
+      <button id="show-requests">Requests</button>
+      <button id="show-graph">Graph</button>
+      <button id="show-interceptors">Interceptors</button>
+      <button id="show-help">Help</button>
     </nav>
 
     <div id="content">
-      <div id="options">
-        <div>
-          <input type="checkbox" id="blocking">
-          <label for="blocking">blocking</label>
+      <div id="main-page" class="page">
+        <div id="options">
+          <div>
+            <input type="checkbox" id="blocking">
+            <label for="blocking">blocking</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onBeforeRequest" class="req-event" checked disabled>
+            <label for="onBeforeRequest">onBeforeRequest</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onBeforeSendHeaders" class="req-event" checked>
+            <label for="onBeforeSendHeaders">onBeforeSendHeaders</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onSendHeaders" class="req-event" checked>
+            <label for="onSendHeaders">onSendHeaders</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onHeadersReceived" class="req-event" checked>
+            <label for="onHeadersReceived">onHeadersReceived</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onAuthRequired" class="req-event" checked>
+            <label for="onAuthRequired">onAuthRequired</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onBeforeRedirect" class="req-event" checked>
+            <label for="onBeforeRedirect">onBeforeRedirect</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onErrorOccurred" class="req-event" checked>
+            <label for="onErrorOccurred">onErrorOccurred</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onResponseStarted" class="req-event" checked>
+            <label for="onResponseStarted">onResponseStarted</label>
+          </div>
+          <div>
+            <input type="checkbox" id="onCompleted" checked disabled class="req-event">
+            <label for="onCompleted">onCompleted</label>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" id="onBeforeRequest" class="req-event" checked disabled>
-          <label for="onBeforeRequest">onBeforeRequest</label>
+
+        <div id="requests">
+          Nothing to show.
         </div>
-        <div>
-          <input type="checkbox" id="onBeforeSendHeaders" class="req-event" checked>
-          <label for="onBeforeSendHeaders">onBeforeSendHeaders</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onSendHeaders" class="req-event" checked>
-          <label for="onSendHeaders">onSendHeaders</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onHeadersReceived" class="req-event" checked>
-          <label for="onHeadersReceived">onHeadersReceived</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onAuthRequired" class="req-event" checked>
-          <label for="onAuthRequired">onAuthRequired</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onBeforeRedirect" class="req-event" checked>
-          <label for="onBeforeRedirect">onBeforeRedirect</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onErrorOccurred" class="req-event" checked>
-          <label for="onErrorOccurred">onErrorOccurred</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onResponseStarted" class="req-event" checked>
-          <label for="onResponseStarted">onResponseStarted</label>
-        </div>
-        <div>
-          <input type="checkbox" id="onCompleted" checked disabled class="req-event">
-          <label for="onCompleted">onCompleted</label>
+
+        <div id="request">
         </div>
       </div>
 
-      <div id="requests">
-        Nothing to show.
+      <div id="graph-page" class="page hidden">
+        <button id="render-btn">render</button>
       </div>
 
-      <div id="request">
+      <div id="interceptors-page" class="page hidden">
+        <div id="interceptors__list">
+        </div>
 
+        Add interceptor:
+        <div id="interceptors__form">
+          Event:
+          <select>
+            <option>onBeforeRequest</option>
+            <option>onBeforeSendHeaders</option>
+            <option>onSendHeaders</option>
+            <option>onHeadersReceived</option>
+            <option>onAuthRequired</option>
+            <option>onBeforeRedirect</option>
+            <option>onResponseStarted</option>
+            <option>onErrorOccurred</option>
+            <option>onCompleted</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="help-page" class="page hidden">
       </div>
     </div>
 

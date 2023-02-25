@@ -27,24 +27,7 @@ export const val = elOrSelector => {
   return el?.value;
 };
 
-export const create = query => {
-  const spec = query.split(' ').reverse();
-
-  const el = document.createElement(spec.pop());
-
-  while (spec.length > 0) {
-    const s = spec.pop();
-    if (s[0] === '#') {
-      el.setAttribute('id', s.substring(1));
-    } else if (s[0] === '.') {
-      el.classList.add(s.substring(1));
-    }
-  }
-
-  return el;
-};
-
-export const create_ = spec => {
+export const create = spec => {
   const root = document.createElement(spec.tag);
   let uids = {};
   for (const attr in spec.attr) {
@@ -70,7 +53,7 @@ export const create_ = spec => {
   }
   if (spec.children) {
     for (const childSpec of spec.children) {
-      const [child, childUids] = create_(childSpec);
+      const [child, childUids] = create(childSpec);
       uids = { ...uids, ...childUids };
       root.appendChild(child);
     }

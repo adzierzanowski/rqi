@@ -40,14 +40,17 @@ button.active {
   width: 100px;
 }
 
-#content {
-  display: grid;
-  grid-template-columns: 1fr 4fr 50%;
-  justify-content: space-between;
+.page {
   padding-top: 30px;
 }
 
-#content > div {
+#main-page {
+  display: grid;
+  grid-template-columns: 1fr 4fr 50%;
+}
+
+
+#main-page > div {
   border-right: 1px solid #444;
   min-height: calc(100vh - 30px);
   padding: 0 10px;
@@ -170,4 +173,8 @@ table tr:nth-child(odd) {
 table td {
   padding: 8px;
   font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
 }

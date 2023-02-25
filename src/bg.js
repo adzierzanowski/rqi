@@ -2,6 +2,7 @@ const state = {
   devtoolsPort: null,
   post: () => {},
   listeners: {},
+  interceptors: {},
 };
 
 const handleCaptureMessage = msg => {
@@ -91,6 +92,12 @@ browser.runtime.onConnect.addListener(port => {
     switch (msg.type) {
       case 'capture':
         handleCaptureMessage(msg);
+        break;
+
+      case 'debug':
+        for (const key in msg.data) {
+          window[key] = msg.data[key];
+        }
         break;
 
       default:
