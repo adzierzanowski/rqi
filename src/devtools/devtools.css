@@ -1,0 +1,173 @@
+body {
+  background-color: #000;
+  color: #ccc;
+  font-family: 'Jetbrains Mono', monospace;
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: #333;
+  color: #eee;
+  font-size: 10px;
+  font-family: 'Jetbrains Mono', monospace;
+  border: 1px solid #444;;
+}
+
+button:hover {
+  background-color: #282828;
+  cursor: pointer;
+}
+
+button.active {
+  border: 1px solid cornflowerblue;
+}
+
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#top-bar button {
+  width: 100px;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 4fr 50%;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+#content > div {
+  border-right: 1px solid #444;
+  min-height: calc(100vh - 30px);
+  padding: 0 10px;
+  max-height: calc(100vh - 30px);
+  overflow-y: scroll;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+}
+
+#requests {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2px;
+}
+
+#request {
+  padding-bottom: 150px;
+}
+
+
+hr {
+  width: 100%;
+}
+
+#requests .request:nth-of-type(even) {
+  background-color: #282828;
+}
+
+.request {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 10px;
+}
+
+.request__header {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0);
+}
+
+.request__header:hover {
+  color: #ccc;
+  cursor: pointer;
+  border: 1px solid #456;
+}
+
+.request > div {
+  min-width: 70px;
+}
+
+.request__details {
+  display: none;
+  padding-left: 20px;
+}
+
+.request__details.visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.request__detail {
+  display: flex;
+  gap: 30px;
+}
+
+.request__detail:hover {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+.request__detail > div  {
+  min-width: 120px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail__header {
+  font-size: 12px;
+}
+
+.detail__request-id {
+  color: cornflowerblue;
+}
+
+.detail__event {
+  color: greenyellow;
+}
+
+.detail__url-params, .detail__headers {
+  margin-left: 20px;
+  max-width: 100%;
+}
+
+.detail__raw {
+  padding-bottom: 150px;
+}
+
+table {
+  border: 1px solid #333;
+  padding: 4px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #333;
+}
+
+table td {
+  padding: 8px;
+  font-size: 12px;
+}

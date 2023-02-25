@@ -1,0 +1,73 @@
+{
+  "manifest_version": 2,
+  "name": "rqi",
+  "version": "1.0.0",
+  "description": "Request interceptor",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": []
+    }
+  ],
+  "background": {
+    "scripts": [
+      "bg.js"
+    ]
+  },
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "alarms",
+    "bookmarks",
+    "browserSettings",
+    "browsingData",
+    "captivePortal",
+    "clipboardRead",
+    "clipboardWrite",
+    "contextMenus",
+    "contextualIdentities",
+    "cookies",
+    "dns",
+    "downloads",
+    "downloads.open",
+    "find",
+    "geolocation",
+    "history",
+    "identity",
+    "idle",
+    "management",
+    "menus",
+    "menus.overrideContext",
+    "nativeMessaging",
+    "notifications",
+    "pkcs11",
+    "privacy",
+    "proxy",
+    "scripting",
+    "search",
+    "sessions",
+    "storage",
+    "tabHide",
+    "tabs",
+    "theme",
+    "topSites",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "webRequestFilterResponse",
+    "webRequestFilterResponse.serviceWorkerScript"
+  ],
+  "omnibox": {
+    "keyword": "f"
+  },
+  "icons": {
+    "48": "icon.svg"
+  },
+  "browser_action": {
+    "default_icon": "assets/icon.svg",
+    "default_title": "ffcmd",
+    "default_popup": "popup.html"
+  },
+  "devtools_page": "devtools/index.html"
+}
